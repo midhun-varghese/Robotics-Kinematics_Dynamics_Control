@@ -1,0 +1,303 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9449,        295]
+NotebookOptionsPosition[      9152,        282]
+NotebookOutlinePosition[      9495,        297]
+CellTagsIndexPosition[      9452,        294]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{"Author", ":", 
+      RowBox[{"Midhun", " ", "Varghese", "\n", 
+       RowBox[{"GitHub", ":", "https", ":"}]}]}], "//", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"github", ".", "com"}], "/", "midhun"}], "-", 
+      RowBox[{
+      "varghese", "\[IndentingNewLine]", "\n", "This", " ", "program", " ", 
+       "is", " ", "used", " ", "to", " ", "develop", " ", "the", " ", 
+       "forward", " ", "kinematics", " ", "of", " ", "any", " ", "serial", 
+       " ", "manipulator", " ", "from", " ", "its", " ", "DH", " ", 
+       RowBox[{"Parameters", ".", "The"}], " ", "associated", " ", 
+       "transformation", " ", "matrix", " ", "and", " ", "the", " ", 
+       "Jacobian", " ", "is", " ", "also", " ", 
+       RowBox[{"calculated", "."}]}]}]}], "*)"}],
+   FontWeight->"Plain"], "\[IndentingNewLine]", 
+  StyleBox["\[IndentingNewLine]",
+   FontWeight->"Plain"], 
+  StyleBox[
+   RowBox[{"(*", 
+    RowBox[{
+    "Defining", " ", "the", " ", "DH", " ", "Parameters", " ", "for", " ", 
+     "the", " ", "PUMA", " ", "560", " ", "Robot"}], "*)"}],
+   FontWeight->"Plain"], 
+  StyleBox["\[IndentingNewLine]",
+   FontWeight->"Plain"], 
+  StyleBox["\[IndentingNewLine]",
+   FontWeight->"Bold"], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+     RowBox[{"DOF", " ", "=", " ", "6"}], " ", ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\n",
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Alpha]", "[", "0", "]"}], "=", "0"}], ";", "              ", 
+     RowBox[{
+      RowBox[{"a", "[", "0", "]"}], "=", "0"}], ";", "         ", 
+     RowBox[{
+      RowBox[{"d", "[", "1", "]"}], "=", "0"}], ";", "         ", 
+     RowBox[{
+      RowBox[{"\[Theta]", "[", "1", "]"}], "=", 
+      RowBox[{"\[Theta]", "[", "1", "]"}]}], ";", "     ", 
+     RowBox[{
+      RowBox[{"jtype", "[", "1", "]"}], "=", "1"}], ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Alpha]", "[", "1", "]"}], "=", 
+      RowBox[{
+       RowBox[{"-", "Pi"}], "/", "2"}]}], ";", "   ", 
+     RowBox[{
+      RowBox[{"a", "[", "1", "]"}], "=", "0"}], ";", "         ", 
+     RowBox[{
+      RowBox[{"d", "[", "2", "]"}], "=", "0"}], ";", "         ", 
+     RowBox[{
+      RowBox[{"\[Theta]", "[", "2", "]"}], "=", 
+      RowBox[{"\[Theta]", "[", "2", "]"}]}], ";", "     ", 
+     RowBox[{
+      RowBox[{"jtype", "[", "2", "]"}], "=", "1"}], ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Alpha]", "[", "2", "]"}], "=", "0"}], ";", "              ", 
+     RowBox[{
+      StyleBox[
+       RowBox[{"a", "[", "2", "]"}],
+       FontWeight->"Plain"], 
+      StyleBox["=",
+       FontWeight->"Plain"], 
+      SubscriptBox["a", "2"]}], ";", "       ", 
+     RowBox[{
+      StyleBox[
+       RowBox[{"d", "[", "3", "]"}],
+       FontWeight->"Plain"], 
+      StyleBox["=",
+       FontWeight->"Plain"], 
+      SubscriptBox[
+       StyleBox["d",
+        FontWeight->"Plain"], "3"]}], ";", "      ", 
+     RowBox[{
+      RowBox[{"\[Theta]", "[", "3", "]"}], "=", 
+      RowBox[{"\[Theta]", "[", "3", "]"}]}], ";", "     ", 
+     RowBox[{
+      RowBox[{"jtype", "[", "3", "]"}], "=", "1"}], ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Alpha]", "[", "3", "]"}], "=", 
+      RowBox[{
+       RowBox[{"-", "Pi"}], "/", "2"}]}], ";", "   ", 
+     RowBox[{
+      StyleBox[
+       RowBox[{"a", "[", "3", "]"}],
+       FontWeight->"Plain"], 
+      StyleBox["=",
+       FontWeight->"Plain"], 
+      SubscriptBox["a", "3"]}], ";", "       ", 
+     RowBox[{
+      StyleBox[
+       RowBox[{"d", "[", "4", "]"}],
+       FontWeight->"Plain"], 
+      StyleBox["=",
+       FontWeight->"Plain"], 
+      SubscriptBox["d", "4"]}], ";", "      ", 
+     RowBox[{
+      RowBox[{"\[Theta]", "[", "4", "]"}], "=", 
+      RowBox[{"\[Theta]", "[", "4", "]"}]}], ";", "     ", 
+     RowBox[{
+      RowBox[{"jtype", "[", "4", "]"}], "=", "1"}], ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Alpha]", "[", "4", "]"}], "=", 
+      RowBox[{"Pi", "/", "2"}]}], ";", "      ", 
+     RowBox[{
+      RowBox[{"a", "[", "4", "]"}], "=", "0"}], ";", "         ", 
+     RowBox[{
+      RowBox[{"d", "[", "5", "]"}], "=", "0"}], ";", "        ", 
+     RowBox[{
+      RowBox[{"\[Theta]", "[", "5", "]"}], "=", 
+      RowBox[{"\[Theta]", "[", "5", "]"}]}], ";", "     ", 
+     RowBox[{
+      RowBox[{"jtype", "[", "5", "]"}], "=", "1"}], ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Alpha]", "[", "5", "]"}], "=", 
+      RowBox[{
+       RowBox[{"-", "Pi"}], "/", "2"}]}], ";", "   ", 
+     RowBox[{
+      RowBox[{"a", "[", "5", "]"}], "=", "0"}], ";", "         ", 
+     RowBox[{
+      RowBox[{"d", "[", "6", "]"}], "=", "0"}], ";", "        ", 
+     RowBox[{
+      RowBox[{"\[Theta]", "[", "6", "]"}], "=", 
+      RowBox[{"\[Theta]", "[", "6", "]"}]}], ";", "     ", 
+     RowBox[{
+      RowBox[{"jtype", "[", "6", "]"}], "=", "1"}], ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{"(*", 
+     RowBox[{
+     "TOOL", " ", "TIP", " ", "POSITION", " ", "IN", " ", "LAST", " ", "LINK",
+       " ", "FRAME"}], "*)"}],
+    FontWeight->"Plain"], "\[IndentingNewLine]", 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   RowBox[{
+    RowBox[{
+     StyleBox["pNT",
+      FontWeight->"Plain"], 
+     StyleBox["=",
+      FontWeight->"Plain"], 
+     RowBox[{
+      StyleBox["{",
+       FontWeight->"Plain"], 
+      RowBox[{
+       StyleBox[
+        RowBox[{"{", "0", "}"}],
+        FontWeight->"Plain"], 
+       StyleBox[",",
+        FontWeight->"Plain"], 
+       StyleBox[
+        RowBox[{"{", "0", "}"}],
+        FontWeight->"Plain"], 
+       StyleBox[",",
+        FontWeight->"Plain"], 
+       RowBox[{
+        StyleBox["{",
+         FontWeight->"Plain"], 
+        SubscriptBox[
+         StyleBox["z",
+          FontWeight->"Plain"], "T"], 
+        StyleBox["}",
+         FontWeight->"Plain"]}]}], 
+      StyleBox["}",
+       FontWeight->"Plain"]}]}], 
+    StyleBox[";",
+     FontWeight->"Plain"]}], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox["\[IndentingNewLine]",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"Print", "[", "\"\< DH Parameters\>\"", "]"}], " ", ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\n",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+     "Print", "[", 
+      "\"\<Link i    \[Alpha][i-1]    a[i-1]      d[i]      \[Theta][i]      \
+J-type[i]\>\"", "]"}], " ", ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\n",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{
+     "Print", "[", 
+      "\"\<-------------------------------------------------------------\>\"",
+       "]"}], " ", ";"}],
+    FontWeight->"Plain"], 
+   StyleBox["\n",
+    FontWeight->"Plain"], 
+   StyleBox[
+    RowBox[{
+     RowBox[{"For", " ", "[", " ", 
+      RowBox[{
+       RowBox[{"i", "=", "1"}], ",", " ", 
+       RowBox[{"i", "<=", "DOF"}], ",", " ", 
+       RowBox[{"i", "++"}], ",", "\n", "    ", 
+       RowBox[{"Print", "[", 
+        RowBox[{"\"\<  \>\"", ",", "i", ",", "\"\<         \>\"", ",", " ", 
+         RowBox[{"\[Alpha]", "[", 
+          RowBox[{"i", "-", "1"}], "]"}], ",", "\"\<        \>\"", ",", " ", 
+         RowBox[{"a", "[", 
+          RowBox[{"i", "-", "1"}], "]"}], ",", "\"\<         \>\"", ",", 
+         RowBox[{"d", "[", "i", "]"}], ",", "\n", "      ", "\"\<       \>\"",
+          ",", " ", 
+         RowBox[{"\[Theta]", "[", "i", "]"}], ",", "\"\<         \>\"", ",", 
+         RowBox[{"jtype", "[", "i", "]"}]}], "]"}]}], "\n", "    ", "]"}], 
+     " ", ";"}],
+    FontWeight->"Plain"]}]}]], "Input",
+ CellChangeTimes->{{3.8061671034628134`*^9, 3.8061671045110397`*^9}, {
+   3.806167154872509*^9, 3.806167187726356*^9}, 3.8061672295980167`*^9, {
+   3.8061673390627675`*^9, 3.80616736865484*^9}, {3.8061674053030815`*^9, 
+   3.8061674359524813`*^9}},
+ CellLabel->"",ExpressionUUID->"bf78ecdc-5f5a-4e3b-b571-ca2b44ddeb45"]
+},
+WindowSize->{759, 833},
+WindowMargins->{{Automatic, 201}, {Automatic, 26}},
+FrontEndVersion->"12.0 for Microsoft Windows (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 8590, 260, 561, "Input",ExpressionUUID->"bf78ecdc-5f5a-4e3b-b571-ca2b44ddeb45"]
+}
+]
+*)
+
