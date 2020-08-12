@@ -23,28 +23,28 @@ Specify the Denavit Hartenberg (DH) Parameters and other robot parameters of the
 
 Local link transformations
 
-![](C:\Users\midhu\OneDrive - umd.edu\Midhun\Github\Git\Robotics-Kinematics_Dynamics_Control\1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian\Images\Local_link_Transformations.jpg)
+![img](Images/Local_link_Transformations.jpg)
 
 
 
 #### **Forward Kinematics**
 
-![](C:\Users\midhu\OneDrive - umd.edu\Midhun\Github\Git\Robotics-Kinematics_Dynamics_Control\1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian\Images\Forward_Kinematics.jpg)
+![img](Images/Forward_Kinematics.jpg)
 
 
 
 #### Translation Jacobian in Base Frame
 
-![](C:\Users\midhu\OneDrive - umd.edu\Midhun\Github\Git\Robotics-Kinematics_Dynamics_Control\1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian\Images\Translation_Jacobian_in_Base_Frame.jpg)
+![img](Images/Translation_Jacobian_in_Base_Frame.jpg)
 
 
 
 #### Rotational Jacobian in Base Frame
 
-![](C:\Users\midhu\OneDrive - umd.edu\Midhun\Github\Git\Robotics-Kinematics_Dynamics_Control\1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian\Images\Rotational_Jacobian_in_Base_Frame.jpg)
+![img](Images/Rotational_Jacobian_in_Base_Frame.jpg)
 
 
 
 #### Full Jacobian Matrix with Singularity Analysis
 
-![](C:\Users\midhu\OneDrive - umd.edu\Midhun\Github\Git\Robotics-Kinematics_Dynamics_Control\1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian\Images\Full_Jacobian_Matrix_with_Singularity_Analysis.jpg)
+![img](Images/Full_Jacobian_Matrix_with_Singularity_Analysis.jpg)
