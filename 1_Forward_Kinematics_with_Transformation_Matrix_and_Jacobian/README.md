@@ -11,6 +11,3 @@ This program can be used to develop the forward kinematics of any serial manipul
 
 
 
-**<u>Instructions :</u>** 
-
-To run the program, download the entire repository and 
