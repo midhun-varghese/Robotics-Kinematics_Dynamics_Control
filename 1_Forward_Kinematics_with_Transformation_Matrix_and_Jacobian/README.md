@@ -17,7 +17,7 @@ Specify the Denavit Hartenberg (DH) Parameters and other robot parameters of the
 
 ![img](Images/image2.png)  
 
-![img]( Robotics-Kinematics_Dynamics_Control/1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian/Images/DH Parameters definition.jpg )
+![img](Images/DH Parameters definition.jpg)
 
 
 
