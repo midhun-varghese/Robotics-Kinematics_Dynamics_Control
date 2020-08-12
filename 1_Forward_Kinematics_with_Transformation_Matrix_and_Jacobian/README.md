@@ -1,5 +1,15 @@
-# Robotics - Kinematics, Dynamics & Control
-This repository contains all my Mathematica and MATLAB codes pertaining to the various aspects of Robotics namely Kinematics, Dynamics, and Control. These implementations can be used for kinematic and dynamic analysis for a variety of robotic manipulators including serial manipulators and parallel robots.
+# 1) Forward Kinematics with Transformation Matrix and Jacobian
+Author: Midhun Varghese  
+
+GitHub : https://github.com/midhun-varghese  
+
+  
+
+This program is used to develop the forward kinematics of serial manipulator. 
 
 
 
+Author : Midhun Varghese
+GitHub : https://github.com/midhun-varghese  
+
+This program is used to develop the forward kinematics of PUMA 560 Robot. The associated transformation matrix and the Jacobian is also calculated.
