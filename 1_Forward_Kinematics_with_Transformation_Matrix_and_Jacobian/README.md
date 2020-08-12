@@ -15,7 +15,7 @@ This program can be used to develop the forward kinematics of any serial manipul
 
 Specify the Denavit Hartenberg (DH) Parameters and other robot parameters of the Manipulator. For this example, the DH parameters and specifications of the PUMA 560 has been specified.
 
-![DH Parameters definition](C:\Users\midhu\OneDrive - umd.edu\Midhun\Github\Git\Robotics-Kinematics_Dynamics_Control\1_Forward_Kinematics_with_Transformation_Matrix_and_Jacobian\Images\DH_Parameters_definition.jpg)
+![DH Parameters definition](Images/DH_Parameters_Definition.jpg)
 
 
 
