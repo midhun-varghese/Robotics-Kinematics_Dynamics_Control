@@ -1,4 +1,4 @@
-# 1) Forward Kinematics with Transformation Matrix and Jacobian
+# 2) Inverse Kinematics using Iterative Jacobian Method
 **Author:** Midhun Varghese  
 
 **GitHub :** https://github.com/midhun-varghese   
