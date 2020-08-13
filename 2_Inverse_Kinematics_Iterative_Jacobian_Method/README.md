@@ -7,44 +7,33 @@
 
 ## <u>**Code Description:**</u> 
 
-This program can be used to develop the forward kinematics of any serial manipulator from its DH Parameters. The associated transformation matrix and the Jacobian is also calculated. Both the translation Jacobian and Rotational Jacobian are computed.
+This program is used to obtain the Inverse Kinematics of a given serial manipulator using the Iterative Jacobian Method. This program maps the tool-space or the workspace of a manipulator with its joint space. For this example, a 3 - R (3 Revolute Joint) Robot is taken as reference.  The program also executes singularity analysis to avoid the singularities if any. In the event that it the manipulator reaches a singularity, the program uses the Pseudoinverse to calculate the Jacobian.  
 
 
 
 ## **<u>Instructions:</u>**
 
-Specify the Denavit Hartenberg (DH) Parameters and other robot parameters of the Manipulator. For this example, the DH parameters and specifications of the PUMA 560 has been specified.
+Before running this program, run the FK_Transformation_Jacobian Program so that the required data is present in Mathematica folder. You may close the program but do not exit out of Mathematica. Specify the Denavit Hartenberg (DH) Parameters and other robot parameters of the Manipulator in the FK_Transformation_Jacobian Program and run the same. 
 
-![DH Parameters definition](Images/DH_Parameters_Definition.jpg)
+In this program, specify the initial location/orientation and the desired orientation in terms of the rotation and translation. 
 
 
 
 ## **<u>Results</u>**
 
-Local link transformations
+Specification of the initial location/orientation and the desired orientation (rotation and translation)
 
-![img](Images/Local_link_Transformations.jpg)
-
-
-
-#### **Forward Kinematics**
-
-![img](Images/Forward_Kinematics.jpg)
+![img](Images/Result1.jpg)
 
 
 
-#### Translation Jacobian in Base Frame
-
-![img](Images/Translation_Jacobian_in_Base_Frame.jpg)
 
 
 
-#### Rotational Jacobian in Base Frame
 
-![img](Images/Rotational_Jacobian_in_Base_Frame.jpg)
+#### Iterative Jacobian Method
 
+For this specific manipulator that was specifies, this shows that the result converges within 3 Iterations.
 
+![img](Images/Result2.jpg)
 
-#### Full Jacobian Matrix with Singularity Analysis
-
-![img](Images/Full_Jacobian_Matrix_with_Singularity_Analysis.jpg)
